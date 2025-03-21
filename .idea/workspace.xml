@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="Added admin Booking" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DanithaHk&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DanithaHk/V-O-Aesthetic-Lounge.git&quot;,
+    &quot;accountId&quot;: &quot;651dd536-7a2b-44d6-8ba1-82a1b21fc2f0&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2u1MqVzQJzfxOQuNXLoWGkwWGun" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.VoAestheticLoungeSpringBootApiApplication.executor": "Run",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/2nd FInal/VO Aesthetic Lounge-SpringBoot API/Frontend/images",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images" />
+      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images\Service" />
+      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\src\main\java\lk\ijse\voaestheticlounge" />
+      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\src\main\java\lk\ijse\voaestheticlounge\util" />
+      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images\Service" />
+      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lk.ijse.voaestheticlounge.repo" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="VO Aesthetic Lounge-SpringBoot API" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="VO Aesthetic Lounge-SpringBoot API" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="VoAestheticLoungeSpringBootApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="VOAestheticLounge" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="lk.ijse.voaestheticlounge.VoAestheticLoungeSpringBootApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="" />
+      <created>1741411821310</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741411821310</updated>
+      <workItem from="1741411822401" duration="7433000" />
+      <workItem from="1741526508561" duration="3664000" />
+      <workItem from="1741583109796" duration="13556000" />
+      <workItem from="1741672101281" duration="8208000" />
+      <workItem from="1741705492973" duration="6130000" />
+      <workItem from="1741754780807" duration="8832000" />
+      <workItem from="1741856711959" duration="3388000" />
+      <workItem from="1741864198356" duration="4771000" />
+      <workItem from="1741876340720" duration="4876000" />
+      <workItem from="1741931297606" duration="4645000" />
+      <workItem from="1742041758195" duration="10637000" />
+      <workItem from="1742103494876" duration="7101000" />
+      <workItem from="1742191143179" duration="12251000" />
+      <workItem from="1742269766312" duration="22254000" />
+      <workItem from="1742358732722" duration="8564000" />
+      <workItem from="1742367610021" duration="222000" />
+      <workItem from="1742367860231" duration="947000" />
+      <workItem from="1742369202043" duration="643000" />
+      <workItem from="1742369865534" duration="8489000" />
+      <workItem from="1742445019887" duration="14284000" />
+    </task>
+    <task id="LOCAL-00001" summary="Frist comit">
+      <option name="closed" value="true" />
+      <created>1741584162632</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741584162632</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add Products And Services">
+      <option name="closed" value="true" />
+      <created>1741624616917</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741624616917</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add Payment and Booking">
+      <option name="closed" value="true" />
+      <created>1741711395606</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741711395606</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add Dashbord ui">
+      <option name="closed" value="true" />
+      <created>1741877252684</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741877252684</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add Dashbord ui">
+      <option name="closed" value="true" />
+      <created>1741877260511</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741877260511</updated>
+    </task>
+    <task id="LOCAL-00006" summary="All Complete user Manage">
+      <option name="closed" value="true" />
+      <created>1742045087980</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742045087980</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added admin service ,products">
+      <option name="closed" value="true" />
+      <created>1742229980723</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742229980723</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added admin Booking">
+      <option name="closed" value="true" />
+      <created>1742315349356</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742315349356</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added admin Booking">
+      <option name="closed" value="true" />
+      <created>1742315393469</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742315393469</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added admin Booking">
+      <option name="closed" value="true" />
+      <created>1742315485559</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742315485559</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added admin Booking">
+      <option name="closed" value="true" />
+      <created>1742315555645</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742315555645</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added admin Booking">
+      <option name="closed" value="true" />
+      <created>1742315590730</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742315590730</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added admin Booking">
+      <option name="closed" value="true" />
+      <created>1742315734517</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1742315734517</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="47037c12-820e-4db4-951a-8917fd5f75ab" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="47037c12-820e-4db4-951a-8917fd5f75ab">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Frist comit" />
+    <MESSAGE value="Add Products And Services" />
+    <MESSAGE value="Add Payment and Booking" />
+    <MESSAGE value="Add Dashbord ui" />
+    <MESSAGE value="All Complete user Manage" />
+    <MESSAGE value="Added admin service ,products" />
+    <MESSAGE value="Added admin Booking" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added admin Booking" />
+  </component>
+</project>

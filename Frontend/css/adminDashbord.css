@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    opacity: 1;
+    overflow-y: scroll;
+    background-color: #f4f4f4;
+    margin: 0;
+    /*padding: 20px;*/
+    text-align: center;
+
+
+
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+li {
+    list-style: none;
+}
+
+h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.275rem;
+    color: var(--bs-emphasis-color);
+}
+
+/* Layout for admin dashboard skeleton */
+
+.wrapper {
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+    background-color: #FFF;
+}
+
+#sidebar {
+    max-width: 264px;
+    min-width: 264px;
+    background: rgb(245, 245, 241);
+    transition: all 0.35s ease-in-out;
+
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 0;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    width: 100%;
+    background: rgb(215, 215, 200);
+}
+
+/* Sidebar Elements Style */
+
+.sidebar-logo {
+    padding: 1.15rem;
+}
+
+.sidebar-logo a {
+    color: #081f37;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.sidebar-nav {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.sidebar-header {
+    color: #0a0b0b;
+    font-size: 1rem;
+    padding: 1.5rem 1.5rem .375rem;
+}
+
+.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #151515;
+    position: relative;
+    display: block;
+    font-size: 1.2rem;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+.sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+}
+
+.navbar-expand .navbar-nav {
+    margin-left: auto;
+}
+
+.content {
+    flex: 1;
+    max-width: 100vw;
+    width: 100vw;
+}
+
+@media (min-width:768px) {
+    .content {
+        max-width: auto;
+        width: auto;
+    }
+}
+
+.card {
+    box-shadow: 0 0 .875rem 0 rgba(34, 46, 60, .05);
+    margin-bottom: 24px;
+    color: #e9ecef;
+}
+
+.illustration {
+    background-color: var(--bs-primary-bg-subtle);
+    color: var(--bs-emphasis-color);
+}
+
+.illustration-img {
+    max-width: 150px;
+    width: 100%;
+}
+
+/* Sidebar Toggle */
+
+#sidebar.collapsed {
+    margin-left: -264px;
+}
+
+/* Footer and Nav */
+
+@media (max-width:767.98px) {
+
+    .js-sidebar {
+        margin-left: -264px;
+    }
+
+    #sidebar.collapsed {
+        margin-left: 0;
+    }
+
+    .navbar,
+    footer {
+        width: 100vw;
+    }
+}
+
+
+
+html[data-bs-theme="dark"] .theme-toggle .fa-sun,
+html[data-bs-theme="light"] .theme-toggle .fa-moon {
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+    font-size: 1.25rem;
+    color: #FFF;
+}
+
+html[data-bs-theme="dark"] .theme-toggle .fa-moon {
+    display: none;
+}
+
+html[data-bs-theme="light"] .theme-toggle .fa-sun {
+    display: none;
+}
+
+.table {
+    background-color: #f8f9fa;
+    color: #9eeaf9;
+    max-width: 100%;
+    margin-bottom: 0;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.tablecard{
+    background-color: lightgoldenrodyellow;
+    color: #9eeaf9;
+    max-width: 100%;
+    margin-bottom: 0;
+    width: 100%;
+}
+.table th,
+.table td {
+    background-color: #ffffff; /* White background for table headers and data */
+    color: #495057; /* Dark text color for better contrast */
+}
+
+.table thead {
+    background-color: #e9ecef; /* Light gray background for the header */
+}
+.table tbody tr:hover {
+    background-color: #f1f3f5; /* Light hover effect */
+}
+.add-btn {
+    background-color: #28a745;  /* Green background */
+    color: white;               /* White text */
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-bottom: 2rem;
+    border: none;
+    font-size: 1rem;
+}
+
+.add-btn:hover {
+    background-color: #218838;  /* Darker green on hover */
+    color: white;
+}
+#search {
+    background-color: #f1f3f5;  /* Light background */
+    border: 2px solid #20c997;     /* Light border */
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#search:focus {
+    border: 1px solid #0f5132;  /* Green border when focused */
+    outline: #20c997;          /* Remove the default outline */
+}

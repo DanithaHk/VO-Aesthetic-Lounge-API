@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Booking</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/adminDashbord.css">
+    <style>
+        .logoImg{
+            padding-top: 2vh;
+            width: 9vw;
+        }
+        .sidebar-item{
+            padding-top: 3vh;
+        }
+        .sidebar-item:hover{
+            padding-top: 1vh;
+            margin-top: 1vh;
+            background-color: rgb(186, 194, 137);
+            border-radius: 20px 20px 20px 20px;
+        }
+
+        .table {
+            background-color: #f8f9fa; /* Light background color */
+        }
+
+        .table th,
+        .table td {
+            background-color: #ffffff; /* White background for table headers and data */
+            color: #495057; /* Dark text color for better contrast */
+        }
+
+        .table thead {
+            background-color: #e9ecef; /* Light gray background for the header */
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+    <aside id="sidebar" class="bg-light">
+        <div class="h-100 d-flex flex-column">
+            <div class="sidebar-logo text-center mt-3">
+                <a href="#">
+                    <img class="logoImg" src="images/VO_MedSpa_Horizontal_Blue.webp" alt="">
+                </a>
+            </div>
+            <ul class="sidebar-nav mb-2 text-start ps-3 flex-grow-1">
+                <li class="sidebar-item">
+                    <a href="adminDashboard.html" class="sidebar-link">
+                        <i class="fa-solid fa-chart-line pe-2"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="adminUser.html" class="sidebar-link">
+                        <i class="fa-solid fa-user"></i>
+                        Users
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="adminService.html" class="sidebar-link">
+                        <i class="fa-solid fa-spa"></i>
+                        Services
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="adminProduct.html" class="sidebar-link">
+                        <i class="fa-solid fa-box"></i>
+                        Products
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="adminBooking.html" class="sidebar-link">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Appointments
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="adminOrders.html" class="sidebar-link">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        Orders
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer text-center pb-4">
+                <a href="logout.php" class="sidebar-link text-danger">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
+    </aside>
+    <div class="main">
+        <main class="content px-3 py-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6 align-self-end text-end">
+                    </div>
+                    <div class="col-12 col-md-6 d-flex">
+                        <div class="card flex-fill border-0 illustration">
+                            <div class="card-body p-0 d-flex flex-fill">
+                                <div class="row g-0 w-100">
+                                    <div class="col-6">
+                                        <div class="p-3 m-1">
+                                            <h4 class="text-center font-monospace fs-3 text-muted" >Appointment - Manage</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 align-self-end text-end">
+                                        <img src="images/Booking.jpg" class="img-fluid illustration-img"
+                                             alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Table Element -->
+                    <div class="card border-0">
+                        <div class="card-header">
+                            <h5 class="card-title text-dark text-center">
+                                Appointment - Manage
+                            </h5>
+                            <button type="button" class="add-btn" style="margin-top: 38px;margin-right: 10px;border-radius: 5px"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"
+                            >Add Booking
+                            </button>
+                            <label>
+                                <input type="text" id="search" placeholder="Search Appointment..." class="form-control" onkeyup="searchBooking()">
+
+                            </label>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Service Name</th>
+                                    <th scope="col">Appointment Date</th>
+                                    <th scope="col">Appointment Time</th>
+                                    <th scope="col">User Email</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody id="BookingTable">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Appointment</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="serviceName" placeholder="Enter Service Name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="date" class="form-control" id="appointmentDate" placeholder="Enter appointment Date">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="time" class="form-control" id="appointmentTime" placeholder="Enter appoiment Time">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="userEmail" placeholder="Enter User Email">
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="btnSave">Save Appointment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--        update user-->
+                <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="updateModalLabel">Update Appointment</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="update_service_name" placeholder="Enter Name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="date" class="form-control" id="update_service_appointmentDate" placeholder="Enter appointment Date">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="time" class="form-control" id="update_service_appointmentTime" placeholder="Enter appoiment Time">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="update_service_userEmail" placeholder="Enter User Email">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="btnUpdate">Update Appointment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="js/adminBooking.js"></script>
+</body>
+</html>
