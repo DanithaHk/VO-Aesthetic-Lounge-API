@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="initial commit">
+    <list default="true" id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="booking updated">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3583e892-0363-4f60-9ba1-d94f03bb11e5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3583e892-0363-4f60-9ba1-d94f03bb11e5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -169,7 +169,7 @@
       <workItem from="1742369202043" duration="643000" />
       <workItem from="1742369865534" duration="8489000" />
       <workItem from="1742445019887" duration="14992000" />
-      <workItem from="1742619319068" duration="16494000" />
+      <workItem from="1742619319068" duration="17040000" />
     </task>
     <task id="LOCAL-00001" summary="Frist comit">
       <option name="closed" value="true" />
@@ -283,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742534631654</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="booking updated">
+      <option name="closed" value="true" />
+      <created>1742669869155</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1742669869155</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +330,7 @@
     <MESSAGE value="Added admin service ,products" />
     <MESSAGE value="Added admin Booking" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="booking updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="booking updated" />
   </component>
 </project>
