@@ -11,27 +11,29 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class AppoimentDTO {
-    private Long id;
-    private Long  userId;
-    private String userEmail;
-    private Long serviceId;
-    private String serviceName;
-    private LocalTime appointmentTime;
-    private LocalDate appointmentDate;
-    private Double price;
+    private Long id;  // Booking ID
+    private Long userId;  // ID of the user associated with the booking
+    private Long serviceId;  // ID of the service associated with the booking
+    private String serviceName;  // Name of the service associated with the booking
+    private LocalTime appointmentTime;  // Appointment time
+    private LocalDate appointmentDate;  // Appointment date
+    private Double price;  // Price of the booking
+    private Long orderId;  // ID of the associated order (if applicable)
+    private String userEmail;;
 
-    public AppoimentDTO() {
-    }
-
-    public AppoimentDTO(Long id, Long userId, String userEmail, Long serviceId, String serviceName, LocalTime appointmentTime, LocalDate appointmentDate, Double price) {
+    public AppoimentDTO(Long id, Long userId, Long serviceId, String serviceName, LocalTime appointmentTime, LocalDate appointmentDate, Double price, Long orderId, String userEmail) {
         this.id = id;
         this.userId = userId;
-        this.userEmail = userEmail;
         this.serviceId = serviceId;
         this.serviceName = serviceName;
         this.appointmentTime = appointmentTime;
         this.appointmentDate = appointmentDate;
         this.price = price;
+        this.orderId = orderId;
+        this.userEmail = userEmail;
+    }
+
+    public AppoimentDTO() {
     }
 
     public Long getId() {
@@ -42,28 +44,16 @@ public class AppoimentDTO {
         this.id = id;
     }
 
-
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public LocalTime getAppointmentTime() {
-        return appointmentTime;
-    }
-
-    public void setAppointmentTime(LocalTime appointmentTime) {
-        this.appointmentTime = appointmentTime;
-    }
-
-
-
     public Long getUserId() {
         return userId;
+    }
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
     public void setUserId(Long userId) {
@@ -78,15 +68,13 @@ public class AppoimentDTO {
         this.serviceId = serviceId;
     }
 
-    public String getServiceName() {
-        return serviceName;
+    public LocalTime getAppointmentTime() {
+        return appointmentTime;
     }
 
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
+    public void setAppointmentTime(LocalTime appointmentTime) {
+        this.appointmentTime = appointmentTime;
     }
-
-
 
     public LocalDate getAppointmentDate() {
         return appointmentDate;
@@ -96,8 +84,6 @@ public class AppoimentDTO {
         this.appointmentDate = appointmentDate;
     }
 
-
-
     public Double getPrice() {
         return price;
     }
@@ -106,4 +92,19 @@ public class AppoimentDTO {
         this.price = price;
     }
 
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
 }

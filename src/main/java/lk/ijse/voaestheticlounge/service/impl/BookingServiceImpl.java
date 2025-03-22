@@ -11,8 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @Transactional
 public class BookingServiceImpl implements BookingService {
@@ -62,5 +65,27 @@ public class BookingServiceImpl implements BookingService {
 
         return appointmentDTOs;
 
+    }
+
+    @Override
+    public boolean isDateTaken(LocalDate appointmentDate) {
+        List<Bookings> bookingsOnDate = bookingRepository.findByAppointmentDate(appointmentDate);
+        List<AppoimentDTO> appointmentDTOs = bookingsOnDate.stream()
+                .map(booking -> modelMapper.map(booking, AppoimentDTO.class))
+                .collect(Collectors.toList());
+        return !appointmentDTOs.isEmpty();
+    }
+
+    @Override
+    public boolean isTimeTaken(LocalDate appointmentDate, LocalTime appointmentTime) {
+        List<Bookings> bookings = bookingRepository.findByAppointmentDateAndAppointmentTime(appointmentDate, appointmentTime);
+
+        // Convert List<Bookings> → List<AppoimentDTO> using ModelMapper
+        List<AppoimentDTO> bookingsOnDateAndTime = bookings.stream()
+                .map(booking -> modelMapper.map(booking, AppoimentDTO.class))
+                .collect(Collectors.toList());
+
+        // Check if the list is empty
+        return !bookingsOnDateAndTime.isEmpty();
     }
 }

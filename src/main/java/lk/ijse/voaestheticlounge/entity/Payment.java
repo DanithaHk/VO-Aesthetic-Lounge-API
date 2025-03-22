@@ -11,62 +11,28 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "booking_id", nullable = false)
-    private Bookings booking;
+    @ManyToOne
+    @JoinColumn(name = "order_id", nullable = false)
+    private Order order;  // Reference to Order entity
 
-    private double amount;
-
-    @Enumerated(EnumType.STRING)
-    private PaymentMethod method; // CREDIT_CARD, PAYPAL, BANK_TRANSFER
-
+    @Column(name = "payment_date", nullable = false)
     private LocalDateTime paymentDate;
 
-    public enum PaymentMethod {
-        CREDIT_CARD, PAYPAL, BANK_TRANSFER
-    }
+    @Column(nullable = false)
+    private Double amount;
 
-    public Payment(Long id, Bookings booking, double amount, PaymentMethod method, LocalDateTime paymentDate) {
-        this.id = id;
-        this.booking = booking;
-        this.amount = amount;
-        this.method = method;
-        this.paymentDate = paymentDate;
-    }
+    @Column(name = "payment_method", nullable = false)
+    private String paymentMethod;
 
     public Payment() {
     }
 
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public PaymentMethod getMethod() {
-        return method;
-    }
-
-    public void setMethod(PaymentMethod method) {
-        this.method = method;
-    }
-
-    public LocalDateTime getPaymentDate() {
-        return paymentDate;
-    }
-
-    public void setPaymentDate(LocalDateTime paymentDate) {
+    public Payment(Long id, Order order, LocalDateTime paymentDate, Double amount, String paymentMethod) {
+        this.id = id;
+        this.order = order;
         this.paymentDate = paymentDate;
-    }
-
-    public Bookings getAppoiment() {
-        return booking;
-    }
-
-    public void setAppoiment(Bookings booking) {
-        this.booking = booking;
+        this.amount = amount;
+        this.paymentMethod = paymentMethod;
     }
 
     public Long getId() {
@@ -77,14 +43,35 @@ public class Payment {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "Payment{" +
-                "id=" + id +
-                ", booking=" + booking +
-                ", amount=" + amount +
-                ", method=" + method +
-                ", paymentDate=" + paymentDate +
-                '}';
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    public LocalDateTime getPaymentDate() {
+        return paymentDate;
+    }
+
+    public void setPaymentDate(LocalDateTime paymentDate) {
+        this.paymentDate = paymentDate;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 }

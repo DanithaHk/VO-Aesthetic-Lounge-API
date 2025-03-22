@@ -4,23 +4,25 @@ package lk.ijse.voaestheticlounge.dto;
 import java.time.LocalDateTime;
 
 public class PaymentDTO {
-    private Long id;
-    private Long bookingId;
-    private double amount;
-    private String method; // CREDIT_CARD, PAYPAL, BANK_TRANSFER
-    private LocalDateTime paymentDate;
+    private Long id;  // Payment ID
+    private Long orderId;  // Order ID associated with this payment
+    private LocalDateTime paymentDate;  // Date and time of the payment
+    private Double amount;  // Amount paid
+    private String paymentMethod;  // Payment method (e.g., Credit Card, PayPal)
 
-    public PaymentDTO(String method, Long id, Long bookingId, double amount, LocalDateTime paymentDate) {
-        this.method = method;
+    // Default constructor
+    public PaymentDTO() {}
+
+    // Constructor to map from Payment entity
+    public PaymentDTO(Long id, Long orderId, LocalDateTime paymentDate, Double amount, String paymentMethod) {
         this.id = id;
-        this.bookingId = bookingId;
-        this.amount = amount;
+        this.orderId = orderId;
         this.paymentDate = paymentDate;
+        this.amount = amount;
+        this.paymentMethod = paymentMethod;
     }
 
-    public PaymentDTO() {
-    }
-
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -29,28 +31,12 @@ public class PaymentDTO {
         this.id = id;
     }
 
-    public Long getBookingId() {
-        return bookingId;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setBookingId(Long bookingId) {
-        this.bookingId = bookingId;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public String getMethod() {
-        return method;
-    }
-
-    public void setMethod(String method) {
-        this.method = method;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
     public LocalDateTime getPaymentDate() {
@@ -61,14 +47,19 @@ public class PaymentDTO {
         this.paymentDate = paymentDate;
     }
 
-    @Override
-    public String toString() {
-        return "PaymentDTO{" +
-                "id=" + id +
-                ", bookingId=" + bookingId +
-                ", amount=" + amount +
-                ", method='" + method + '\'' +
-                ", paymentDate=" + paymentDate +
-                '}';
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 }

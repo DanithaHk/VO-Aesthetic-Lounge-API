@@ -51,6 +51,7 @@ public class WebSecurityConfig {
                                 "/api/v1/user/getAll",
                                 "/api/v1/booking",
                                 "/api/v1/booking/save",
+                                "/api/v1/order/save",
                                 "/api/v1/booking/update/{id}",
                                 "/api/v1/booking/delete/{id}",
                                 "/api/v1/booking/getAll",
