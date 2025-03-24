@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="booking updated">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3583e892-0363-4f60-9ba1-d94f03bb11e5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3583e892-0363-4f60-9ba1-d94f03bb11e5.xml" afterDir="false" />
+    <list default="true" id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="add order table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/BookingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/dto/AppoimentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/dto/AppoimentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/dto/PaymentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/dto/PaymentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/entity/Bookings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/entity/Bookings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/entity/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/entity/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/repo/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/repo/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/impl/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/impl/BookingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/AuthController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,11 +16,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -106,8 +96,8 @@
       <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images\Service" />
       <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images" />
+      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images\Service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="lk.ijse.voaestheticlounge.repo" />
@@ -169,7 +159,8 @@
       <workItem from="1742369202043" duration="643000" />
       <workItem from="1742369865534" duration="8489000" />
       <workItem from="1742445019887" duration="14992000" />
-      <workItem from="1742619319068" duration="17040000" />
+      <workItem from="1742619319068" duration="20778000" />
+      <workItem from="1742789621863" duration="609000" />
     </task>
     <task id="LOCAL-00001" summary="Frist comit">
       <option name="closed" value="true" />
@@ -291,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742669869155</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add order table">
+      <option name="closed" value="true" />
+      <created>1742669954648</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1742669954648</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,6 +330,7 @@
     <MESSAGE value="Added admin Booking" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="booking updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="booking updated" />
+    <MESSAGE value="add order table" />
+    <option name="LAST_COMMIT_MESSAGE" value="add order table" />
   </component>
 </project>
