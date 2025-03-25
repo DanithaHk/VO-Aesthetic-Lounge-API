@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="add order table">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/AuthController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +69,7 @@
     &quot;com.codeium.enabled&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/2nd FInal/VO Aesthetic Lounge-SpringBoot API&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/2nd FInal/VO Aesthetic Lounge-SpringBoot API/Frontend/images&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -161,6 +162,8 @@
       <workItem from="1742445019887" duration="14992000" />
       <workItem from="1742619319068" duration="20778000" />
       <workItem from="1742789621863" duration="609000" />
+      <workItem from="1742878156855" duration="1873000" />
+      <workItem from="1742917281892" duration="314000" />
     </task>
     <task id="LOCAL-00001" summary="Frist comit">
       <option name="closed" value="true" />

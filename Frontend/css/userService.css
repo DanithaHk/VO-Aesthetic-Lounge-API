@@ -1,0 +1,62 @@
+/* Default styles (Desktop & large screens) */
+#logo {
+    width: 9vw;
+    height: inherit;
+    padding-left: 2rem;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: black;
+    font-size: 1.02rem;
+}
+
+.nav-item {
+    padding-left: 0.5rem;
+}
+
+#login {
+    color: black;
+}
+
+#login:hover {
+    color: rgb(68, 155, 68);
+}
+.hero-section {
+    background: url('../images/Hero_home_web.webp') no-repeat center center/cover;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    position: relative;
+}
+.hero-section h1 {
+    position: absolute;
+    left: 80px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: rgb(146, 143, 140);
+    margin: 0;
+    font-family: "Tinos", serif;
+    font-size: 3.5rem;
+    max-width: 70vw;
+}
+
+.hero-section h4 {
+    position: absolute;
+    left: 96px;
+    top: 48%;
+    font-family: 'Times New Roman', Times, serif;
+    width: 50vw;
+    color: rgb(62, 63, 65);
+    font-size: 2.5rem;
+}
+#service-img{
+    width: 30vw;
+    height: 60vh;
+}
