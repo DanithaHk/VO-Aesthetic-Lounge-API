@@ -13,6 +13,7 @@ function getServices() {
             table.empty();
             services.forEach((service) => {
                 let image= imgUrl2 + service.imageUrl;
+
                 table.append(`
                     <tr>
                         <td>${service.name}</td>

@@ -60,3 +60,7 @@
     width: 30vw;
     height: 60vh;
 }
+#timeDuration {
+    font-size: 1rem; /* Change size */
+    font-weight: lighter; /* Optional: Make text bold */
+}

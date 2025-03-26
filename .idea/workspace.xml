@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="add order table">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="edit table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/css/userService.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/css/userService.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/js/adminService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/js/adminService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/js/customerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/js/customerService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/userService.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/userService.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +165,7 @@
       <workItem from="1742619319068" duration="20778000" />
       <workItem from="1742789621863" duration="609000" />
       <workItem from="1742878156855" duration="1873000" />
-      <workItem from="1742917281892" duration="314000" />
+      <workItem from="1742917281892" duration="4941000" />
     </task>
     <task id="LOCAL-00001" summary="Frist comit">
       <option name="closed" value="true" />
@@ -293,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742669954648</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add order table">
+      <option name="closed" value="true" />
+      <created>1742918093591</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1742918093591</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +344,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="booking updated" />
     <MESSAGE value="add order table" />
-    <option name="LAST_COMMIT_MESSAGE" value="add order table" />
+    <MESSAGE value="edit table" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit table" />
   </component>
 </project>
