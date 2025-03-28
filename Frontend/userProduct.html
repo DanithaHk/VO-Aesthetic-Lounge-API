@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V/O Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+    <style>
+        /* Default styles (Desktop & large screens) */
+        #logo {
+            width: 9vw;
+            height: inherit;
+            padding-left: 2rem;
+        }
+        #navBar{
+            background-color: white;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .navbar-nav {
+            text-align: center;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .navbar-nav .nav-link {
+            color: black;
+            font-size: 1.02rem;
+        }
+
+        .nav-item {
+            padding-left: 0.5rem;
+        }
+        /* Navbar Right End Alignment */
+        .navbar-collapse {
+            justify-content: center;
+        }
+
+        .navbar-nav {
+            flex-grow: 1;
+        }
+
+        .navbar-right {
+            margin-left: auto; /* Push to the right */
+            display: flex;
+            align-items: center;
+        }
+
+
+        #login {
+            color: black;
+        }
+
+        #login:hover {
+            color: rgb(68, 155, 68);
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+        .product-slider {
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .product-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-image {
+            width: 100%;
+            height: 350px; /* Fixed image height */
+            object-fit: cover; /* Maintain aspect ratio */
+            border-radius: 10px;
+        }
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #6c757d;
+        }
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 5px;
+        }
+        .add-to-cart {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .add-to-cart:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Style */
+        footer {
+            margin-top: 15vh;
+            background-color: #fff;  /* White background */
+        }
+
+        footer a {
+            text-decoration: none;  /* Remove text decoration */
+        }
+
+        footer a:hover {
+            color: rgb(68, 155, 68); /* Hover color */
+        }
+
+        footer .footer-logo {
+            width: 100%;
+            max-width: 180px;  /* Slightly smaller logo */
+        }
+
+        footer ul {
+            padding-left: 0;
+        }
+
+        footer ul li {
+            margin: 5px 0;
+        }
+
+        footer .fab {
+            font-size: 1.5rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            footer .col-md-3 {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" id="navBar">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="images/VO_MedSpa_Horizontal_Blue.webp" id="logo" alt="logo">
+            </a>
+
+            <!-- Toggle Button for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
+                            Service
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Aesthetician Service</a></li>
+                            <li><a class="dropdown-item" href="#">Body Fat</a></li>
+                            <li><a class="dropdown-item" href="#">BBL & Moxi</a></li>
+                            <li><a class="dropdown-item" href="#">Lip Flip</a></li>
+                            <li><a class="dropdown-item" href="#">Laser Hair Removal</a></li>
+                            <li><a class="dropdown-item" href="#">CoolSculpting</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Cart & Login at Right End -->
+            <div class="d-flex align-items-center">
+                <a class="nav-link me-3 text-dark" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+                <a class="nav-link me-3" id="login" href="#"><i class="fa-solid fa-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+<div class="container">
+    <h2 class="text-center my-4"></h2>
+    <div class="product-slider">
+        <!-- Products will be dynamically inserted here -->
+    </div>
+</div>
+<section class="fotter">
+    <!-- Footer Section -->
+    <footer class="bg-white text-dark py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Logo Section -->
+                <div class="col-12 col-md-3 text-center text-md-start">
+                    <a href="#">
+                        <img src="images/VO_MedSpa_Horizontal_Blue.webp" alt="Logo" class="footer-logo" width="180">
+                    </a>
+                </div>
+
+                <!-- Links Section -->
+                <div class="col-12 col-md-3 text-center my-3 my-md-0">
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark">Home</a></li>
+                        <li><a href="#" class="text-dark">About</a></li>
+                        <li><a href="#" class="text-dark">Services</a></li>
+                        <li><a href="#" class="text-dark">Products</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="col-12 col-md-3 text-center my-3 my-md-0">
+                    <h5>Contact</h5>
+                    <p><a href="mailto:info@example.com" class="text-dark">V/OMed's@gmail.com</a></p>
+                    <p><a href="tel:+1234567890" class="text-dark">+123 456 7890</a></p>
+                    <p><a href="#" class="text-dark">Nupe matara</a></p>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="col-12 col-md-3 text-center">
+                    <ul class="list-unstyled d-flex justify-content-center">
+                        <li><a href="#" class="text-dark me-3"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" class="text-dark me-3"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="text-center mt-4">
+                <p class="mb-0">© 2025 V/O Aesthetic Lounge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="js/userProduct.js"></script>
+</body>
+</html>
+
