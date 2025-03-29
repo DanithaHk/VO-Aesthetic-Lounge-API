@@ -47,7 +47,7 @@ public class BookingController {
         UserDTO userDTO = userServiceImpl.findByEmail(bookingDTO.getUserEmail());
         if (userDTO == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(new ResponseDTO(VarList.Bad_Request, "User not found", null));
+                    .body(new ResponseDTO(VarList.Bad_Request, "Your email not register with us", null));
         }
         boolean isDateTaken = bookingService.isDateTaken(bookingDTO.getAppointmentDate());
         if (isDateTaken) {
