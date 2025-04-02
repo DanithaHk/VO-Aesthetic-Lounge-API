@@ -1,3 +1,5 @@
+/*
+
 function increaseQuantity(btn) {
     let quantitySpan = btn.previousElementSibling;
     let quantity = parseInt(quantitySpan.innerText);
@@ -32,31 +34,20 @@ function updateGrandTotal() {
     document.getElementById("grand-total").innerText = `$${grandTotal.toFixed(2)}`;
 }
 // Function to get userId from JWT token
-function getUserIdFromToken() {
-    let token = localStorage.getItem("token"); // Get token from localStorage
-    if (!token) {
-        console.error("No token found in localStorage!");
-        return null;
-    }
+*/
 
-    try {
-        let decodedToken = jwt_decode(token); // Decode token
-        console.log("Decoded Token:", decodedToken); // Debugging
-        return decodedToken.userId || null; // Make sure backend includes userId
-    } catch (error) {
-        console.error("Error decoding token:", error);
-        return null;
-    }
-}
 function loadCartItems() {
-    let userId = getUserIdFromToken();
-    if (!userId) {
-        console.error("User ID is missing! Cannot load cart items.");
+    let token =  localStorage.getItem("token");
+
+    console.log(token)
+
+    if (!token) {
+        console.error("please log frist ");
         return;
     }
 
     $.ajax({
-        url: `/api/cart/user/${userId}`, // Backend endpoint to get cart items
+        url: `http://localhost:8080/api/cart/getAll`, // Backend endpoint to get cart items
         type: "GET",
         headers: {
             "Authorization": `Bearer ${localStorage.getItem("token")}` // Pass token in header
@@ -101,4 +92,6 @@ function displayCartItems(cartItems) {
 }
 $(document).ready(function () {
     loadCartItems();
+
+
 });

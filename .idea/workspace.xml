@@ -4,22 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="done user booking">
-      <change afterPath="$PROJECT_DIR$/Frontend/images/imgGalleary/b1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/images/imgGalleary/img 2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/images/imgGalleary/img 4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/images/imgGalleary/img1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/images/imgGalleary/img3.jpg" afterDir="false" />
+    <list default="true" id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="done sign up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/adminUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/adminUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/js/adminBooking.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/js/adminBooking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/js/userCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/js/userCart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/js/userProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/js/userProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/userProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/userProduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/userCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/userCart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/BookingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/dto/AuthDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/dto/AuthDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/dto/CartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/dto/CartDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/impl/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/impl/EmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/repo/CartReposittory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/repo/CartReposittory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/impl/CartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/BookingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/BookingController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/CartController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/dto/CartDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/dto/CartDTO.class" afterDir="false" />
     </list>
@@ -70,38 +72,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.VoAestheticLoungeSpringBootApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/2nd FInal/VO Aesthetic Lounge-SpringBoot API/Frontend/images&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.VoAestheticLoungeSpringBootApiApplication.executor": "Debug",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/2nd FInal/VO Aesthetic Lounge-SpringBoot API/Frontend/images",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images" />
@@ -188,7 +190,7 @@
       <workItem from="1743227319943" duration="5745000" />
       <workItem from="1743438697862" duration="6740000" />
       <workItem from="1743517964142" duration="726000" />
-      <workItem from="1743526212116" duration="1665000" />
+      <workItem from="1743526212116" duration="22096000" />
     </task>
     <task id="LOCAL-00001" summary="Frist comit">
       <option name="closed" value="true" />
@@ -366,7 +368,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743234144126</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="done cart">
+      <option name="closed" value="true" />
+      <created>1743565035740</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1743565035740</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,6 +422,19 @@
     <MESSAGE value="done user Product" />
     <MESSAGE value="done user Contact" />
     <MESSAGE value="done user booking" />
-    <option name="LAST_COMMIT_MESSAGE" value="done user booking" />
+    <MESSAGE value="done cart" />
+    <MESSAGE value="done sign up" />
+    <option name="LAST_COMMIT_MESSAGE" value="done sign up" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/CartController.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -58,12 +58,20 @@ $(document).ready(function () {
                 "email": $("#emailSignIn").val(),
                 "password": $("#passwordSignIn").val()
             }),
+            headers: {
+                "Authorization": `Bearer ${localStorage.getItem("token")}` // Pass token in header
+            },
             success: (res) => {
                 console.log(res.data.token);
+                console.log(res.data);
+                console.log(res.data.role);
                 window.localStorage.setItem("token", res.data.token);
                 if (res.message === "Success") {
-                    window.location.href = "index.html";
-                    console.log("Login successful");
+                    if (res.data.role === "ADMIN") {
+                        window.location.href = "adminDashboard.html";
+                    } else if (res.data.role === "USER") {
+                        window.location.href = "index.html";
+                    }
                     alert("Login successful");
                 } else {
                     alert("Failed: " + (res.message || "Unknown error"));

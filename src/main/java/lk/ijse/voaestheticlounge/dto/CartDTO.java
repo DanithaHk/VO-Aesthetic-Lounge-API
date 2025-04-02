@@ -1,7 +1,7 @@
 package lk.ijse.voaestheticlounge.dto;
 
 public class CartDTO {
-    private Long id;
+    private Long cartId;
     private Long userId;
     private Long productId;
     private int quantity;
@@ -11,8 +11,8 @@ public class CartDTO {
     public CartDTO() {
     }
 
-    public CartDTO(Long id, Long userId, Long productId, int quantity, String productName, String image) {
-        this.id = id;
+    public CartDTO(Long cartId, Long userId, Long productId, int quantity, String productName, String image) {
+        this.cartId = cartId;
         this.userId = userId;
         this.productId = productId;
         this.quantity = quantity;
@@ -20,12 +20,12 @@ public class CartDTO {
         this.image = image;
     }
 
-    public Long getId() {
-        return id;
+    public Long getCartId() {
+        return cartId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCartId(Long cartId) {
+        this.cartId = cartId;
     }
 
     public Long getUserId() {

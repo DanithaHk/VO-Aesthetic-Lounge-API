@@ -1,3 +1,4 @@
+
 function getProducts() {
     let imgUrl2= "images/Product/";
     $.ajax({
@@ -43,14 +44,14 @@ function getProducts() {
                 ]
             });
 
-            $(".add-to-cart").click(function () {
                     $(".add-to-cart").click(function() {
-                        let userId = getUserIdFromToken(); // Get user ID from token
-                        if (!userId) {
+                        let token = localStorage.getItem("token");
+                        // let userId =; // Get user ID from token
+                        if (!token) {
                             alert("User not logged in!");
                             return;
                         }
-
+                        let userId = getUserIdFromToken();
                         let productId = $(this).data("id");
                         let quantity = $(this).data("quantity");
                         let image = $(this).data("image");
@@ -68,6 +69,9 @@ function getProducts() {
                             url: "http://localhost:8080/api/v1/cart/save",
                             type: "POST",
                             contentType: "application/json",
+                            headers: {
+                                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                            },
                             data: JSON.stringify(cartData),
                             success: function(response) {
                                 alert("Product added to cart successfully!");
@@ -79,7 +83,6 @@ function getProducts() {
                             }
                         });
                     });
-            });
         },
         error: function (xhr, status, error) {
             console.error("Error loading products:", error);
@@ -107,5 +110,7 @@ function getUserIdFromToken() {
 
 $(document).ready(() => {
     getProducts();
+    getUserIdFromToken();
     console.log(localStorage.getItem("token"));
+
 });

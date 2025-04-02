@@ -36,7 +36,7 @@ public class UserController {
 
                 if (res == VarList.Created) {
                     String token = jwtUtil.generateToken(userDTO);
-                    authDTO = new AuthDTO(userDTO.getEmail(), token);
+                    authDTO = new AuthDTO(userDTO.getEmail(), userDTO.getRole(), token);
                     return ResponseEntity.status(HttpStatus.CREATED)
                             .body(new ResponseDTO(VarList.Created, "Success", authDTO));
                 } else if (res == VarList.Not_Acceptable) {

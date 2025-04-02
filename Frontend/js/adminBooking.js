@@ -5,6 +5,9 @@ function getBookings() {
     $.ajax({
         url: "http://localhost:8080/api/v1/booking/getAll", // Your API endpoint for appointments
         method: "GET",
+        headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}` // Pass token in header
+        },
         success: (res) => {
             console.log(res);  // Log the response for debugging
             let appointments = res.data;  // Assuming the data comes in `data` field
@@ -63,6 +66,9 @@ $(document).ready(function () {
                 "userEmail":$("#userEmail").val()
 
             }),
+            headers: {
+                "Authorization": `Bearer ${localStorage.getItem("token")}` // Pass token in header
+            },
             success: (res) => {
                 console.log(res);
                 if (res.message === "Success") {
@@ -102,6 +108,9 @@ const editAppointment = (id,name,userEmail) => {
                 "appointmentDate": document.getElementById("update_service_appointmentDate").value,
                 "appointmentTime": document.getElementById("update_service_appointmentTime").value
             }),
+            headers: {
+                "Authorization": `Bearer ${localStorage.getItem("token")}` // Pass token in header
+            },
             success: (res) => {
                 if (res.message === "Appointment updated successfully") {
                     getBookings();
@@ -125,6 +134,9 @@ const deleteAppointment = (id) => {
     $.ajax({
         url: "http://localhost:8080/api/v1/booking/delete/" + id,
         method: "DELETE",
+        headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}` // Pass token in header
+        },
         success: (res) => {
             if (res.message === "Success") {
                 alert("Appointment deleted successfully");

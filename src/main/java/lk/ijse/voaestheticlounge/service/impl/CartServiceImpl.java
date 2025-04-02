@@ -10,7 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @Transactional
 public class CartServiceImpl implements CartService {
@@ -18,10 +21,24 @@ public class CartServiceImpl implements CartService {
      CartReposittory cartReposittory;
     @Autowired
      ModelMapper modelMapper;
-    @Override
-    public void addtoCart(CartDTO cartDTO) {
-        cartReposittory.save(modelMapper.map(cartDTO,Cart.class));
+//    @Override
+//    public void addtoCart(CartDTO cartDTO) {
+//        cartReposittory.save(modelMapper.map(cartDTO,Cart.class));
+//    }
+@Override
+public void addtoCart(CartDTO cartDTO) {
+    if (cartDTO == null) {
+        throw new IllegalArgumentException("CartDTO cannot be null");
     }
+
+    try {
+        Cart cart = modelMapper.map(cartDTO, Cart.class);
+        cartReposittory.save(cart);
+    } catch (Exception e) {
+        throw new RuntimeException("Failed to add item to cart", e);
+    }
+}
+
 
     @Override
     public void removeFromCart(Long id) {
@@ -30,7 +47,16 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public List<CartDTO> getCartItemsByUser(Long userId) {
-        return modelMapper.map(cartReposittory.findByUserId(userId),new TypeToken<List<CartDTO>>() {}.getType());
+//        return modelMapper.map(cartReposittory.findByUserId(userId),new TypeToken<List<CartDTO>>() {}.getType());
+        List<Cart> cartItems = cartReposittory.findByUserId(userId);
+
+        if (cartItems == null || cartItems.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+
+        return modelMapper.map(cartItems, new TypeToken<List<CartDTO>>() {}.getType());
+
     }
 
     @Override

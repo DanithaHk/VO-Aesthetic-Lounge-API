@@ -10,10 +10,12 @@ import lk.ijse.voaestheticlounge.service.impl.BookingServiceImpl;
 import lk.ijse.voaestheticlounge.service.impl.EmailServiceImpl;
 import lk.ijse.voaestheticlounge.service.impl.ServiceServiceImpl;
 import lk.ijse.voaestheticlounge.service.impl.UserServiceImpl;
+import lk.ijse.voaestheticlounge.util.JwtUtil;
 import lk.ijse.voaestheticlounge.util.VarList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -36,6 +38,8 @@ public class BookingController {
     EmailServiceImpl emailService;
     @Autowired
     OrderService orderService;
+    @Autowired
+    JwtUtil jwtUtil;
 
     public BookingController(BookingService bookingService, BookingServiceImpl bookingServiceImpl) {
         this.bookingService = bookingService;
@@ -43,6 +47,7 @@ public class BookingController {
     }
 
     @PostMapping("/save")
+    @PreAuthorize("hasAnyAuthority('USER')")
     public ResponseEntity<ResponseDTO> saveBooking(@RequestBody @Valid AppoimentDTO bookingDTO) {
         // Step 1: Fetch user details from email
         UserDTO userDTO = userServiceImpl.findByEmail(bookingDTO.getUserEmail());
@@ -164,7 +169,9 @@ public class BookingController {
                 .body(new ResponseDTO(VarList.OK, "Booking Updated Successfully", null));
     }
     @GetMapping("/getAll")
-    public ResponseEntity<ResponseDTO> getAllBookings() {
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    public ResponseEntity<ResponseDTO> getAllBookings(@RequestHeader("Authorization") String token) {
+        jwtUtil.getUserRoleCodeFromToken(token.substring(7));
         List<AppoimentDTO> appoimentDTO = bookingServiceImpl.getAll();
         for (AppoimentDTO fruit : appoimentDTO) {
             System.out.println(fruit);
