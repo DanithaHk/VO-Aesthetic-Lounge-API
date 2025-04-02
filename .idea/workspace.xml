@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6384bf06-7787-4eb5-980d-9df9600c5b1d" name="Changes" comment="done user booking">
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/BookingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/BookingController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/images/imgGalleary/b1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/images/imgGalleary/img 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/images/imgGalleary/img 4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/images/imgGalleary/img1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/images/imgGalleary/img3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/adminUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/adminUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/js/userProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/js/userProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/userProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/userProduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/BookingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/dto/CartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/dto/CartDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/impl/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/voaestheticlounge/service/impl/EmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/controller/CartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/dto/CartDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/voaestheticlounge/dto/CartDTO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +33,9 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -89,14 +105,14 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images" />
+      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images\imgGalleary" />
       <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images\Product" />
       <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images\Service" />
       <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\src\main\java\lk\ijse\voaestheticlounge" />
-      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\src\main\java\lk\ijse\voaestheticlounge\util" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images\Product" />
       <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images" />
+      <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images\Product" />
       <recent name="D:\2nd FInal\VO Aesthetic Lounge-SpringBoot API\Frontend\images\Service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -169,7 +185,10 @@
       <workItem from="1743090631174" duration="1635000" />
       <workItem from="1743150467969" duration="4651000" />
       <workItem from="1743175401821" duration="1479000" />
-      <workItem from="1743227319943" duration="3173000" />
+      <workItem from="1743227319943" duration="5745000" />
+      <workItem from="1743438697862" duration="6740000" />
+      <workItem from="1743517964142" duration="726000" />
+      <workItem from="1743526212116" duration="1665000" />
     </task>
     <task id="LOCAL-00001" summary="Frist comit">
       <option name="closed" value="true" />
@@ -339,7 +358,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743231913919</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="done user booking">
+      <option name="closed" value="true" />
+      <created>1743234144126</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1743234144126</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

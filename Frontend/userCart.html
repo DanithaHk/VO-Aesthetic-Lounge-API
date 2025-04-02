@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/userService.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logo Left Side -->
+            <a class="navbar-brand" href="#"><img src="assest/img/VO_MedSpa_Horizontal_Blue.webp" id="logo" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Service</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Aesthetician Service</a></li>
+                            <li><a class="dropdown-item" href="#">Body Fat</a></li>
+                            <li><a class="dropdown-item" href="#">BBL & Moxi</a></li>
+                            <li><a class="dropdown-item" href="#">Lip Flip</a></li>
+                            <li><a class="dropdown-item" href="#">Laser Hair Removal</a></li>
+                            <li><a class="dropdown-item" href="#">CoolSculpting</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Cart & Login Buttons Aligned to Right -->
+            <div class="d-flex align-items-center ms-auto">
+                <a class="nav-link me-3 text-dark" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+                <a class="nav-link me-3" id="login" href="#"><i class="fa-solid fa-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Shopping Cart</h2>
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead class="table-dark">
+            <tr>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Remove</th>
+            </tr>
+            </thead>
+            <tbody id="cart-items">
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-end">
+        <h4>Total: <span id="grand-total">$20</span></h4>
+        <button class="btn btn-success">Checkout</button>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/userCart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

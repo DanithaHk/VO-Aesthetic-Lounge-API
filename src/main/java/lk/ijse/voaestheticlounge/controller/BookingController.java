@@ -1,5 +1,6 @@
 package lk.ijse.voaestheticlounge.controller;
 
+import jakarta.mail.MessagingException;
 import jakarta.validation.Valid;
 import lk.ijse.voaestheticlounge.dto.*;
 import lk.ijse.voaestheticlounge.service.BookingService;
@@ -95,21 +96,50 @@ public class BookingController {
             // Send confirmation email
             String userEmail = bookingDTO.getUserEmail();
             LocalDate appointmentDate = bookingDTO.getAppointmentDate();
-            emailService.sendBookingConfirmationEmail(
-                    userEmail,
-                    "Your Appointment is Confirmed – V/O Medspa 🌿\n",
-                    "Hi " + userName + ",\n\n" +
-                            "Your appointment has been confirmed successfully. Here are the details:\n\n" +
-                            "📅 Appointment Date: " + appointmentDate + "\n" +
-                            "⏰ Appointment Time: " + time + "\n" +
-                            "📍 Location: No.100, Nupe, Matara\n" +
-                            "📞 Contact: 0412265762\n\n" +
-                            "What to Expect:\n" +
-                            "Our expert team is ready to provide you with a relaxing and professional experience. If you have any questions before your appointment, feel free to call us!\n\n" +
-                            "V/O Medspa Team\n" +
-                            "📍 No.100, Nupe, Matara\n" +
-                            "📞 0412265762"
-            );
+            Long bookingId = bookingDTO.getId();
+            try {
+
+                emailService.sendBookingConfirmationEmail(
+                        userEmail,
+                        "Your Appointment is Confirmed – V/O Medspa 🌿",
+                        "<html>" +
+                                "<body style='font-family: Arial, sans-serif;'>" +
+                                "<h2 style='color: #28a745;'>Your Appointment is Confirmed! 🎉</h2>" +
+                                "<p>Hi " + userName + ",</p>" +
+                                "<p>Your appointment has been confirmed successfully. Here are the details:</p>" +
+                                "<p><strong>📅 Appointment Date:</strong> " + appointmentDate + "<br>" +
+                                "<strong>⏰ Appointment Time:</strong> " + time + "<br>" +
+                                "<strong>📍 Location:</strong> No.100, Nupe, Matara<br>" +
+                                "<strong>📞 Contact:</strong> 0412265762</p>" +
+
+
+                                "<h3>💳 Secure Your Appointment with Payment</h3>" +
+                                "<p>To confirm your appointment, please complete your payment.</p>" +
+                                "<p style='text-align: center;'>" +
+                                "<a href='http://localhost:8080/api/v1/booking/?appointmentId=" + bookingId + "' style='background-color: #f39c12; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-size: 16px;'> Pay Now</a>" +
+                                "</p>" +
+
+                                "<h3>🌿 What to Expect</h3>" +
+                                "<p>Our expert team is ready to provide you with a relaxing and professional experience. If you have any questions before your appointment, feel free to call us!</p>" +
+
+                                "<p style='text-align: center;'>" +
+                                "<a href='https://yourwebsite.com' style='background-color: #28a745; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-size: 16px;'>🌿 Visit Our Website</a>" +
+                                "</p>" +
+
+                                "<p style='text-align: center;'>" +
+                                "<a href='http://localhost:8080/api/v1/booking/delete/" + bookingId + "' style='background-color: #dc3545; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-size: 16px;'> Cancel Appointment</a>" +
+                                "</p>" +
+
+                                "<p>Best Regards,<br><strong>V/O Medspa Team</strong><br>📍 No.100, Nupe, Matara<br>📞 0412265762</p>" +
+                                "</body>" +
+                                "</html>"
+
+                );
+            }catch (MessagingException e) {
+                e.printStackTrace();
+                System.out.println("email not send ");
+            }
+
 
             // Step 5: Return success response
             return ResponseEntity.status(HttpStatus.OK)

@@ -18,7 +18,13 @@ function getProducts() {
                 <h5 class="product-title">${product.name}</h5>
                 <p class="product-description">${product.description}</p>
                 <h6 class="product-price">Rs:${product.price.toFixed(2)}</h6>
-                <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                <button class="add-to-cart" 
+                        data-id="${product.id}" 
+                        data-quantity="1" 
+                        data-image="${product.imageUrl}" 
+                        data-name="${product.name}">
+                    Add to Cart
+                </button>
             </div>
         `;
                 slider.append(productCard);
@@ -38,18 +44,68 @@ function getProducts() {
             });
 
             $(".add-to-cart").click(function () {
-                let productId = $(this).data("id");
-                let productName = $(this).closest(".product-card").find(".product-title").text();
-                alert("Product " + productName + " added to cart!");
+                    $(".add-to-cart").click(function() {
+                        let userId = getUserIdFromToken(); // Get user ID from token
+                        if (!userId) {
+                            alert("User not logged in!");
+                            return;
+                        }
+
+                        let productId = $(this).data("id");
+                        let quantity = $(this).data("quantity");
+                        let image = $(this).data("image");
+                        let productName = $(this).data("name");
+
+                        let cartData = {
+                            userId: userId,  // Change dynamically
+                            productId: productId,
+                            quantity: quantity,
+                            image: image,
+                            productName: productName
+                        };
+
+                        $.ajax({
+                            url: "http://localhost:8080/api/v1/cart/save",
+                            type: "POST",
+                            contentType: "application/json",
+                            data: JSON.stringify(cartData),
+                            success: function(response) {
+                                alert("Product added to cart successfully!");
+                                console.log(response);
+                            },
+                            error: function(xhr, status, error) {
+                                console.error("Error:", error);
+                                alert("Failed to add product to cart.");
+                            }
+                        });
+                    });
             });
         },
         error: function (xhr, status, error) {
             console.error("Error loading products:", error);
-            $(".product-slider").html("<p class='text-center text-danger'>⚠️ Error loading products. Please try again later.</p>");
+            $(".product-slider").html("<p class='text-center text-danger'> Error loading products. Please try again later.</p>");
         }
     });
 
 }
+function getUserIdFromToken() {
+    let token = localStorage.getItem("token"); // Get token from localStorage
+    if (!token) {
+        console.error("No token found!");
+        return null;
+    }
+
+    try {
+        let decodedToken = jwt_decode(token);
+        console.log("Decoded Token:", decodedToken); // Debugging
+        return decodedToken.userId || null; // Make sure backend sends userId
+    } catch (error) {
+        console.error("Error decoding token:", error);
+        return null;
+    }
+}
+
 $(document).ready(() => {
     getProducts();
+    console.log(localStorage.getItem("token"));
 });
