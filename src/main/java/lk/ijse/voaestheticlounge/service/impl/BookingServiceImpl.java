@@ -88,4 +88,8 @@ public class BookingServiceImpl implements BookingService {
         // Check if the list is empty
         return !bookingsOnDateAndTime.isEmpty();
     }
+    public List<AppoimentDTO> getBookingsByUserId(Long userId) {
+        List<Bookings> bookings = bookingRepository.findAllByUserId(userId);
+        return bookings.stream().map(booking -> modelMapper.map(booking, AppoimentDTO.class)).collect(Collectors.toList());
+    }
 }

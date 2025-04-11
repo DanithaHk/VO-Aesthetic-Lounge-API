@@ -1,6 +1,7 @@
 package lk.ijse.voaestheticlounge.service;
 
 import lk.ijse.voaestheticlounge.dto.AppoimentDTO;
+import lk.ijse.voaestheticlounge.dto.UserDTO;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -16,4 +17,7 @@ public interface BookingService {
     List<AppoimentDTO> getAll();
     boolean isDateTaken(LocalDate appointmentDate);
     boolean isTimeTaken(LocalDate appointmentDate, LocalTime appointmentTime);
+
+
+    List<AppoimentDTO> getBookingsByUserId(Long userId);
 }

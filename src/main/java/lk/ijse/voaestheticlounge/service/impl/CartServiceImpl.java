@@ -47,7 +47,6 @@ public void addtoCart(CartDTO cartDTO) {
 
     @Override
     public List<CartDTO> getCartItemsByUser(Long userId) {
-//        return modelMapper.map(cartReposittory.findByUserId(userId),new TypeToken<List<CartDTO>>() {}.getType());
         List<Cart> cartItems = cartReposittory.findByUserId(userId);
 
         if (cartItems == null || cartItems.isEmpty()) {

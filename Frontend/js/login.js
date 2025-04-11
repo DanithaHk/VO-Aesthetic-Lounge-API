@@ -38,7 +38,7 @@ $(document).ready(function () {
                 if (res.message === "Success") {
                     console.log("Registration successful");
                     alert("Registration successful");
-                    window.location.href = "Login.html";
+                    window.location.href = "../index.html";
                 } else {
                     alert("Failed: " + (res.message || "Unknown error"));
                 }
@@ -58,9 +58,7 @@ $(document).ready(function () {
                 "email": $("#emailSignIn").val(),
                 "password": $("#passwordSignIn").val()
             }),
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem("token")}` // Pass token in header
-            },
+
             success: (res) => {
                 console.log(res.data.token);
                 console.log(res.data);

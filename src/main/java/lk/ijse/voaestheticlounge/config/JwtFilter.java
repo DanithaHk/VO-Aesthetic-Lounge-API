@@ -1,8 +1,6 @@
-package lk.ijse.voaestheticlounge.config;
-
+package lk.ijse.voaestheticlounge.filter;
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,6 +10,7 @@ import lk.ijse.voaestheticlounge.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -19,53 +18,62 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.List;
+
 @Component
 public class JwtFilter extends OncePerRequestFilter {
+
     @Autowired
     private JwtUtil jwtUtil;
+
     @Autowired
     private UserServiceImpl userService;
+
     @Value("${jwt.secret}")
     private String secretKey;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
-        String authorization = httpServletRequest.getHeader("Authorization");
+    protected void doFilterInternal(HttpServletRequest request,
+                                    HttpServletResponse response,
+                                    FilterChain filterChain) throws ServletException, IOException {
+
+        String authorizationHeader = request.getHeader("Authorization");
         String token = null;
         String email = null;
 
-
-        if (null != authorization && authorization.startsWith("Bearer ")) {
-
-            token = authorization.substring(7);
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            token = authorizationHeader.substring(7);
             email = jwtUtil.getUsernameFromToken(token);
-            Claims claims=jwtUtil.getUserRoleCodeFromToken(token);
-            httpServletRequest.setAttribute("email", email);
-            httpServletRequest.setAttribute("role", claims.get("role"));
+
+            Claims claims = jwtUtil.getUserRoleCodeFromToken(token);
+            request.setAttribute("email", email);
+            request.setAttribute("role", claims.get("role"));
         }
 
-        if (null != email && SecurityContextHolder.getContext().getAuthentication() == null) {
-            UserDetails userDetails
-                    = userService.loadUserByUsername(email);
+        if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            UserDetails userDetails = userService.loadUserByUsername(email);
 
             if (jwtUtil.validateToken(token, userDetails)) {
-                UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken
-                        = new UsernamePasswordAuthenticationToken(userDetails,
-                        null, userDetails.getAuthorities());
+                Claims claims = jwtUtil.getUserRoleCodeFromToken(token);
+                String role = claims.get("role").toString(); // "USER" or "ADMIN"
 
-                usernamePasswordAuthenticationToken.setDetails(
-                        new WebAuthenticationDetailsSource().buildDetails(httpServletRequest)
-                );
+                // 🔐 Map role to authorities
+                List<SimpleGrantedAuthority> authorities = List.of(new SimpleGrantedAuthority(role));
 
-                SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+                // 🛡️ Set Authentication
+                UsernamePasswordAuthenticationToken authenticationToken =
+                        new UsernamePasswordAuthenticationToken(userDetails, null, authorities);
+
+                authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
+                SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+
+                // ✅ Debug print
+                System.out.println("✅ Authenticated User: " + email);
+                System.out.println("✅ Mapped Authorities: " + authorities);
             }
-
         }
-        filterChain.doFilter(httpServletRequest, httpServletResponse);
-    }
 
-    private Claims getClaimsFromJwtToken(String token) {
-        return Jwts.parser().setSigningKey(secretKey.getBytes()).parseClaimsJws(token).getBody();
+        filterChain.doFilter(request, response);
     }
-
 }

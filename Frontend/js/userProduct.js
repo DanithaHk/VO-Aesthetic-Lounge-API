@@ -4,6 +4,9 @@ function getProducts() {
     $.ajax({
         url: "http://localhost:8080/api/v1/product/getAll",
         method: "GET",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: function (response) {
             console.log("Products Loaded:", response);
             if (!response.data || response.data.length === 0) {

@@ -7,6 +7,9 @@ function getServices() {
         url: "http://localhost:8080/api/v1/service/getAll",
         method: "GET",
         contentType: "application/json",
+        headers:{
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: (res) => {
             services = res.data;
             let table = $('#serviceTable');
@@ -70,6 +73,9 @@ $(document).ready(function () {
                 "appoimentDuration": convertToLocalTime($("#duration").val()),
                 "imageUrl": fileName
             }),
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            },
             success: (res) => {
                 console.log(res);
                 if (res.message === "Success") {
@@ -138,14 +144,18 @@ function convertToLocalTime(input) {
     return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00`;
 }
 const updateService = (ServiceID,serviceData) => {
-
+    const token = localStorage.getItem("token");
+    console.log(token)
     $.ajax({
         url: "http://localhost:8080/api/v1/service/update/" + ServiceID,
         method: "PUT",
         contentType: "application/json",
         data: JSON.stringify(serviceData),
+        headers: {
+            "Authorization": "Bearer " + token
+        },
         success: (res) => {
-            alert("Hotel updated successfully!");
+            alert("Service updated successfully!");
             $("#updateModal").modal("hide");
             location.reload(); // Refresh the page to reflect changes
         },
@@ -161,7 +171,7 @@ const deleteService = (id) => {
         method: "DELETE",
         success: (res) => {
             if (res.message === "Success") {
-                alert("User deleted successfully");
+                alert("Service deleted successfully");
                 location.reload(); // Reload the page to update the table
             } else {
                 alert("Failed: " + (res.message || "Unknown error"));

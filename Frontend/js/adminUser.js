@@ -1,9 +1,20 @@
 function getUsers() {
     console.log("get admin users manage");
+    let token = localStorage.getItem("token");
+
+    if (!token) {
+       alert("log first")
+    } else {
+        console.log("Token found:", token);
+    }
     $.ajax({
         url: "http://localhost:8080/api/v1/user/getAll",
         method: "GET",
         contentType: "application/json",
+        headers: {
+            "Authorization": "Bearer " + token
+        },
+
         success: (res) => {
             customers = res.data;
             let table = $('#userTable');
@@ -40,6 +51,7 @@ function getUsers() {
 
 }
 $(document).ready(function () {
+    getUsers();
     $('#btnSave').click(function () {
         $.ajax({
             url: "http://localhost:8080/api/v1/user/register",
@@ -51,6 +63,9 @@ $(document).ready(function () {
                 "password": $("#password").val(),
                 "role": $("#role").val()
             }),
+            headers: {
+                "Authorization": "Bearer " + token
+            },
             success: (res) => {
                 console.log(res);
                 if (res.message === "Success") {
@@ -79,6 +94,9 @@ const edit = (UserEmail, UserRole) => {
             data: JSON.stringify({
                 "role": document.getElementById("update_role").value
             }),
+            headers: {
+                "Authorization": "Bearer " + token
+            },
             success: (res) => {
                 if (res.message === "User role updated successfully") {
                     alert("User role updated successfully");
@@ -99,6 +117,9 @@ const deleteCustomer = (id) => {
     $.ajax({
         url: "http://localhost:8080/api/v1/user/delete/" + id,
         method: "DELETE",
+        headers: {
+            "Authorization": "Bearer " + token
+        },
         success: (res) => {
             if (res.message === "Success") {
                 alert("User deleted successfully");

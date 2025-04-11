@@ -12,17 +12,23 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <!-- Logo Left Side -->
-            <a class="navbar-brand" href="#"><img src="assest/img/VO_MedSpa_Horizontal_Blue.webp" id="logo" alt="logo"></a>
+            <!-- Logo left end -->
+            <a class="navbar-brand" href="#"><img src="images/VO_MedSpa_Horizontal_Blue.webp" id="logo" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Service</a>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="userAbout.html">About</a>
+                    </li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Service
+                        </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#">Aesthetician Service</a></li>
                             <li><a class="dropdown-item" href="#">Body Fat</a></li>
@@ -31,16 +37,22 @@
                             <li><a class="dropdown-item" href="#">Laser Hair Removal</a></li>
                             <li><a class="dropdown-item" href="#">CoolSculpting</a></li>
                         </ul>
+                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="userService.html">Service</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="userProduct.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="userContact.html">Contact</a>
+                    </li>
                 </ul>
             </div>
-
-            <!-- Cart & Login Buttons Aligned to Right -->
-            <div class="d-flex align-items-center ms-auto">
-                <a class="nav-link me-3 text-dark" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
-                <a class="nav-link me-3" id="login" href="#"><i class="fa-solid fa-user"></i> Login</a>
+            <!-- Cart and Login aligned to the right -->
+            <div class="d-flex ms-auto">
+                <a class="nav-link me-3 text-dark" href="userCart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+                <a class="nav-link me-3" id="login" href="Login.html"><i class="fa-solid fa-user"></i> Login</a>
             </div>
         </div>
     </nav>
@@ -76,10 +88,11 @@
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/userCart.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
+<script src="js/userCart.js"></script>
 </body>
 </html>

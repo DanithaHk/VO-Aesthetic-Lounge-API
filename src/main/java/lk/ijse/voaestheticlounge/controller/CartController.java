@@ -19,7 +19,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/cart")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")    // Only allow frontend at this URL
+
 public class CartController {
     @Autowired
     private final CartService cartService;
@@ -34,7 +35,7 @@ public class CartController {
     private UserService userService;
 
     @PostMapping("/save")
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
     public ResponseEntity<ResponseDTO> addToCart(@RequestBody @Valid CartDTO cartDTO, @RequestHeader("Authorization") String token) {
         jwtUtil.getUserRoleCodeFromToken(token.substring(7));
         String username = jwtUtil.getUsernameFromToken(token.substring(7));
@@ -49,6 +50,7 @@ public class CartController {
     @GetMapping("/getAll")
     @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
     public ResponseEntity<ResponseDTO> getCartItemsByUser(@RequestHeader("Authorization") String token) {
+        System.out.println(token);
         String email = jwtUtil.getUsernameFromToken(token.substring(7));
         UserDTO userDTO = userService.findByEmail(email);
         Long userId1 = userDTO.getId();
@@ -57,13 +59,17 @@ public class CartController {
     }
 
     @DeleteMapping("/remove/{cartId}")
-    public ResponseEntity<String> removeFromCart(@PathVariable Long cartId) {
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
+    public ResponseEntity<String> removeFromCart(@PathVariable Long cartId, @RequestHeader("Authorization") String token) {
+        jwtUtil.getUserRoleCodeFromToken(token.substring(7));
         cartService.removeFromCart(cartId);
         return ResponseEntity.status(HttpStatus.OK).body("Cart Item Removed Successfully!");
     }
 
     @PutMapping("/update/{cartId}/{quantity}")
-    public ResponseEntity<?> updateCartQuantity(@PathVariable Long cartId, @PathVariable int quantity) {
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
+    public ResponseEntity<?> updateCartQuantity(@PathVariable Long cartId, @PathVariable int quantity , @RequestHeader("Authorization") String token) {
+        jwtUtil.getUserRoleCodeFromToken(token.substring(7));
         Cart updatedCart = cartService.updateCartQuantity(cartId, quantity);
         return ResponseEntity.ok(updatedCart);
     }

@@ -47,8 +47,9 @@ public class BookingController {
     }
 
     @PostMapping("/save")
-    @PreAuthorize("hasAnyAuthority('USER')")
-    public ResponseEntity<ResponseDTO> saveBooking(@RequestBody @Valid AppoimentDTO bookingDTO) {
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
+    public ResponseEntity<ResponseDTO> saveBooking(@RequestBody @Valid AppoimentDTO bookingDTO, @RequestHeader("Authorization") String token) {
+        jwtUtil.getUserRoleCodeFromToken(token.substring(7));
         // Step 1: Fetch user details from email
         UserDTO userDTO = userServiceImpl.findByEmail(bookingDTO.getUserEmail());
         if (userDTO == null) {
@@ -179,4 +180,15 @@ public class BookingController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(new ResponseDTO(VarList.OK, "Success", bookingService.getAll()));
     }
+    @GetMapping("/get/{email}")
+    @PreAuthorize("hasAnyAuthority('USER')")
+    public ResponseEntity<ResponseDTO> getBookingByEmail(@PathVariable String email, @RequestHeader("Authorization") String token) {
+        jwtUtil.getUserRoleCodeFromToken(token.substring(7));
+        UserDTO user = userServiceImpl.findByEmail(email);
+        List<AppoimentDTO> bookings = bookingService.getBookingsByUserId(user.getId());
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(new ResponseDTO(VarList.OK, "Success", bookings));
+    }
+
 }

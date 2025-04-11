@@ -2,10 +2,14 @@
 
 function getUsers() {
     console.log("get admin users");
+    let token = localStorage.getItem("token");
     $.ajax({
         url: "http://localhost:8080/api/v1/user/getAll",
         method: "GET",
         contentType: "application/json",
+        headers: {
+            "Authorization": "Bearer " + token
+        },
         success: (res) => {
             customers = res.data;
 

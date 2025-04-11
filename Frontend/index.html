@@ -22,9 +22,68 @@
         .swiper {
             padding-bottom: 40px;
         }
+
+        /* Sidebar styles */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            right: -250px; /* Initially hidden */
+            background-color: #f8f9fa;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            z-index: 1050; /* ADD THIS LINE to bring it above other content */
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .sidebar .profile-header {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sidebar .profile-header img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px 20px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .sidebar ul li a:hover {
+            color: #007bff;
+        }
+
+        .sidebar .close-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
+
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -36,41 +95,73 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Service
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Aesthetician Service</a></li>
-                            <li><a class="dropdown-item" href="#">Body Fat</a></li>
-                            <li><a class="dropdown-item" href="#">BBL & Moxi</a></li>
-                            <li><a class="dropdown-item" href="#">Lip Flip</a></li>
-                            <li><a class="dropdown-item" href="#">Laser Hair Removal</a></li>
-                            <li><a class="dropdown-item" href="#">CoolSculpting</a></li>
-                        </ul>
+                        <a class="nav-link" aria-current="page" href="userAbout.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Product</a>
+                        <a class="nav-link" href="userService.html">Service</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="userProduct.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="userContact.html">Contact</a>
                     </li>
                 </ul>
             </div>
+
             <!-- Cart and Login aligned to the right -->
             <div class="d-flex ms-auto">
-                <a class="nav-link me-3 text-dark" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
-                <a class="nav-link me-3" id="login" href="#"><i class="fa-solid fa-user"></i> Login</a>
+                <a class="nav-link me-3 text-dark" href="userCart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+                <a class="nav-link me-3" id="login" href="Login.html"><i class="fa-solid fa-user"></i> Login</a>
+                <!-- Profile Button -->
+                <a class="nav-link me-3" href="#" id="profileBtn" onclick="toggleSidebar()"><i class="fa-solid fa-user-circle"></i> Profile</a>
             </div>
         </div>
     </nav>
-
 </header>
+
+<!-- Sidebar (Profile) -->
+<div id="profileSidebar" class="sidebar">
+    <span class="close-btn" onclick="toggleSidebar()">×</span>
+    <div class="profile-header">
+
+        <h4 id="profileName">Dr. K. P. N. Pathirana</h4>
+        <p id="profileEmail">vo.medispa@example.com</p> <!-- You can dynamically set this with JS -->
+    </div>
+
+    <div class="p-3">
+        <h5 class="mb-3">Appointments</h5>
+        <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+            <table class="table table-bordered table-striped">
+                <thead class="table-light">
+                <tr>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Time</th>
+
+                </tr>
+                </thead>
+                <tbody id="appointmentTableBody">
+                <!-- Example row -->
+                <tr>
+                    <td>Facial</td>
+                    <td>2025-04-20</td>
+                    <td>10:30 AM</td>
+
+                </tr>
+                <!-- Real rows can be dynamically injected with JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <a href="logout.html" class="btn btn-outline-danger mt-3 w-100"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+</div>
+
+
+
 <main>
     <section class="hero">
         <div class="hero-section">
@@ -280,10 +371,19 @@
 
     </section>
 </main>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+<!-- Add these scripts before the custom script -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
 
 <script>
+    // Decode token to get email
+    const token = localStorage.getItem("token");
+    const decoded = jwt_decode(token); // use jwt_decode from CDN
+    const email = decoded.email || decoded.sub;
+
+    // Swiper initialization
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
         spaceBetween: 20,
@@ -305,8 +405,90 @@
             }
         }
     });
+
+    // Toggle profile sidebar
+    function toggleSidebar() {
+        const sidebar = document.getElementById("profileSidebar");
+        if (sidebar) {
+            console.log("see")
+            sidebar.classList.toggle("show");
+        } else {
+            console.error("Sidebar element not found!");
+        }
+    }
+
+    // Close sidebar when clicking outside
+    document.addEventListener("click", function (event) {
+        const sidebar = document.getElementById("profileSidebar");
+        const profileBtn = document.getElementById("profileBtn");
+
+        if (
+            sidebar && sidebar.classList.contains("show") &&
+            !sidebar.contains(event.target) &&
+            event.target !== profileBtn
+        ) {
+            sidebar.classList.remove("show");
+        }
+    });
+
+    // Load appointments
+    function getBookings(email) {
+        $.ajax({
+            url: "http://localhost:8080/api/v1/booking/get/" + email,
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+            },
+            success: (res) => {
+                let appointments = res.data;
+                let table = $('#appointmentTableBody');
+                table.empty();
+
+                appointments.forEach((appointment) => {
+                    table.append(`
+                        <tr>
+                            <td>${appointment.serviceName}</td>
+                            <td>${appointment.appointmentDate}</td>
+                            <td>${appointment.appointmentTime}</td>
+                        </tr>
+                    `);
+                });
+            },
+            error: (error) => {
+                console.error("Error fetching appointments:", error);
+            }
+        });
+    }
+
+    function getUsers(email) {
+        $.ajax({
+            url: "http://localhost:8080/api/v1/user/get/"+email,
+            type: "GET",
+            contentType: "application/json",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            },
+            success: function (response) {
+                $("#profileName").text(response.data.name);
+                $("#profileEmail").text(response.data.email);
+            },
+            error: function () {
+                console.error("Failed to load profile data.");
+            }
+        });
+    }
+
+    // On page load, fetch data
+    document.addEventListener("DOMContentLoaded", function () {
+
+        if (email) {
+            getUsers(email);
+            getBookings(email);
+        }else {
+            window.location.href = "login.html";
+        }
+    });
 </script>
-<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 
 <!-- bootstrap 5 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -2,10 +2,18 @@ let imgUrl2= "images/Product/";
 console.log(typeof jQuery);
 
 function getProducts() {
-
+    let token = localStorage.getItem("token");
+    if (!token) {
+        alert("log first")
+    } else {
+        console.log("Token found:", token);
+    }
     $.ajax({
         url: "http://localhost:8080/api/v1/product/getAll",
         method: "GET",
+        headers: {
+            "Authorization": "Bearer " + token
+        },
         success: (res) => {
             console.log(res);
             products = res.data;
@@ -61,6 +69,9 @@ $(document).ready(function () {
                 "stockQuantity":$("#qty").val(),
                 "imageUrl": fileName
             }),
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            },
             success: (res) => {
                 console.log(res);
                 if (res.message === "Success") {
@@ -79,4 +90,3 @@ $(document).ready(function () {
         })
     })
 });
-getProducts();

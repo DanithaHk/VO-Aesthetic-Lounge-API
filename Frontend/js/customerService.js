@@ -5,6 +5,9 @@ function getServices() {
         url: "http://localhost:8080/api/v1/service/getAll",
         method: "GET",
         contentType: "application/json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: (res) => {
             console.log("API Response:", res); // Debugging
 
@@ -55,6 +58,9 @@ function loadServices() {
         url: "http://localhost:8080/api/v1/service/getAll", // Backend API endpoint
         type: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: function (res) {
             console.log("API Response:", res); // Debugging Response
 
@@ -113,6 +119,9 @@ function saveBooking() {
                     appointmentTime: appointmentTime,
                     serviceName: serviceName
                 }),
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                },
                 success: (res) => {
 
 
